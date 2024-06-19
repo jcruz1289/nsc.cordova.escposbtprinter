@@ -1,0 +1,31 @@
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="nsc.cordova.escposbtprinter"
+        version="1.0.0">
+    <name>ESCPosBTPrinter</name>
+    <description>ESC/POS Bluetooth Printer Plugin</description>
+    <license>ISC</license>
+    <keywords>cordova, escpos, bluetooth, printer</keywords>
+    <engines>
+        <engine name="cordova" version=">=7.0.0" />
+    </engines>
+
+    <js-module src="www/ESCPosBTPrinter.js" name="ESCPosBTPrinter">
+        <clobbers target="cordova.plugins.ESCPosBTPrinter" />
+    </js-module>
+
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="ESCPosBTPrinter">
+                <param name="android-package" value="nsc.cordova.escposbtprinter.ESCPosBTPrinter"/>
+            </feature>
+        </config-file>
+
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.BLUETOOTH" />
+            <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+        </config-file>/>
+
+        <source-file src="src/android/ESCPosBTPrinter.java" target-dir="src/nsc/cordova/escposbtprinter"/>
+        <lib-file arch="device" src="src/android/libs/printer_library.jar" />
+    </platform>
+</plugin>

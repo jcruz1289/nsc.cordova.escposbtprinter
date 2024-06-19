@@ -1,0 +1,20 @@
+{
+  "name": "escpos-btprinter",
+  "version": "1.0.0",
+  "description": "ESC/POS Bluetooth Printer Plugin",
+  "cordova": {
+    "id": "nsc.cordova.escposbtprinter",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "escpos",
+    "bluetooth",
+    "printer"
+  ],
+  "author": "Tu Nombre",
+  "license": "ISC",
+  "dependencies": {}
+}
