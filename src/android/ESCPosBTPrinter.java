@@ -195,7 +195,7 @@ public class ESCPosBTPrinter extends CordovaPlugin {
             callbackContext.success("Print " + text + " Barcode.");
 
         } catch (Exception e) {
-            callbackContext.error("printWhitFormat >> " + e.toString());
+            callbackContext.error("printBarCode >> " + e.toString());
         }
     }
 
@@ -248,7 +248,7 @@ public class ESCPosBTPrinter extends CordovaPlugin {
         } catch (JSONException e) {
             e.printStackTrace();
         } catch (Exception e) {
-            callbackContext.error("printWhitFormat >> " + e.toString());
+            callbackContext.error("applyBarcodeSettings >> " + e.toString());
         }
 
         return barcodeSetting;
@@ -305,6 +305,9 @@ public class ESCPosBTPrinter extends CordovaPlugin {
             }
             if (config.has("text")) {
                 text = config.getString("text");
+            }
+            if (config.has("chartSetName")) {
+                escCmd.setChartsetName(config.getString("chartSetName"));
             }
 
             commonSetting.setEscLineSpacing(lineSpacing);
